@@ -326,3 +326,119 @@ CareGuruPlus
 │
 └── README.md
 ```
+---
+
+# 🤝 Contributing
+
+Contributions are always welcome!
+
+If you'd like to improve CareGuru+, feel free to:
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+# 📌 Future Enhancements
+
+The following features are planned for future releases:
+
+- 🔐 JWT Authentication
+- 👤 User Profiles
+- 💬 Persistent Chat History
+- 🤖 Claude / OpenAI Integration
+- 🩺 Infermedica Integration
+- 👨‍⚕️ Doctor Dashboard
+- 🧑‍💼 Admin Dashboard
+- 📅 Appointment Booking
+- 💊 Medicine Recommendation
+- 🧪 Lab Test Booking
+- 📄 PDF Medical Reports
+- 🔔 Email Notifications
+- 🎤 Voice Assistant
+- 📱 Progressive Web App (PWA)
+- 🌍 Google Maps Integration
+
+---
+
+# 🧪 Testing
+
+Backend
+
+```bash
+npm run build
+```
+
+Run development server
+
+```bash
+npm run dev
+```
+
+Frontend
+
+```bash
+cd frontend
+npm run dev
+```
+
+---
+
+# 📄 License
+
+This project is developed for educational and portfolio purposes.
+
+---
+
+# 👨‍💻 Author
+
+**Nishant Malik**
+
+GitHub
+
+https://github.com/nishantmalik2810
+
+Project Repository
+
+https://github.com/nishantmalik2810/CareGuruPlus
+
+---
+
+# 🙏 Acknowledgements
+
+This project makes use of the following technologies:
+
+- React
+- TypeScript
+- Express.js
+- Prisma ORM
+- PostgreSQL
+- Vercel
+- Render
+- Axios
+- Framer Motion
+- Lucide React
+
+Special thanks to the open-source community for the amazing tools and libraries used in this project.
+
+---
+
+# ⭐ Support
+
+If you found this project useful:
+
+⭐ Star this repository
+
+🍴 Fork the repository
+
+🛠 Contribute improvements
+
+---
+
+<p align="center">
+
+Made with ❤️ by Nishant Malik
+
+</p>
