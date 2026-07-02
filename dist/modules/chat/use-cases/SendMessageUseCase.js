@@ -5,13 +5,13 @@ const SessionService_1 = require("../services/SessionService");
 const EmergencyService_1 = require("../services/EmergencyService");
 const ConversationEngine_1 = require("../services/ConversationEngine");
 const InfermedicaService_1 = require("../services/InfermedicaService");
-const ClaudeService_1 = require("../services/ClaudeService");
+const GeminiService_1 = require("../services/GeminiService");
 const ResponseFormatter_1 = require("../services/ResponseFormatter");
 class SendMessageUseCase {
     emergencyService = new EmergencyService_1.EmergencyService();
     conversationEngine = new ConversationEngine_1.ConversationEngine();
     infermedicaService = new InfermedicaService_1.InfermedicaService();
-    claudeService = new ClaudeService_1.ClaudeService();
+    geminiService = new GeminiService_1.GeminiService();
     formatter = new ResponseFormatter_1.ResponseFormatter();
     async execute(payload) {
         // 🚨 Emergency check FIRST
@@ -44,14 +44,24 @@ This is not a substitute for professional medical advice.`,
         // STEP 5 - Analyze symptoms
         const diagnosis = await this.infermedicaService.analyze(payload.message);
         // STEP 6 - Generate AI response
-        const aiReply = await this.claudeService.chat(`User Symptoms:
+        const aiReply = await this.geminiService.chat(`
+User Symptoms:
 ${payload.message}
 
+Detected Symptoms:
+${diagnosis.symptoms.join(", ") || "None"}
+
 Possible Conditions:
-${diagnosis.possibleConditions.join(", ")}
+${diagnosis.possibleConditions.join(", ") || "Unknown"}
 
 Follow-up Question:
-${diagnosis.followUpQuestion ?? "None"}`);
+${diagnosis.followUpQuestion ?? "None"}
+
+Triage Level:
+${diagnosis.triageLevel}
+
+Respond naturally as CareGuru+, explaining the possible conditions, asking the follow-up question if needed, and always remind the user that this is not a substitute for professional medical advice.
+`);
         // STEP 7 - Format response
         const response = this.formatter.format(aiReply, diagnosis, history.length + 1);
         // STEP 8 - Save assistant reply

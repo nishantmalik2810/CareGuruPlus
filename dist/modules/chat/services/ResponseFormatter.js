@@ -5,30 +5,13 @@ class ResponseFormatter {
     format(aiReply, diagnosis, conversationLength) {
         return {
             success: true,
-            reply: `${aiReply}
-
---------------------------------
-
-Symptoms:
-${diagnosis.symptoms.length
-                ? diagnosis.symptoms.join(", ")
-                : "Not identified"}
-
-Possible Conditions:
-${diagnosis.possibleConditions.length
-                ? diagnosis.possibleConditions.join(", ")
-                : "Unknown"}
-
-Recommendation:
-${diagnosis.triageLevel}
-
-Follow-up Question:
-${diagnosis.followUpQuestion ?? "None"}
-
-Conversation Length:
-${conversationLength} messages
-
-This is not a substitute for professional medical advice.`,
+            reply: aiReply,
+            assessment: {
+                symptoms: diagnosis.symptoms,
+                possibleConditions: diagnosis.possibleConditions,
+                recommendation: diagnosis.triageLevel,
+                followUpQuestion: diagnosis.followUpQuestion ?? "None"
+            },
             triageLevel: diagnosis.triageLevel,
             actions: [
                 "Book Appointment",

@@ -4,7 +4,7 @@ import { sessionService } from "../services/SessionService";
 import { EmergencyService } from "../services/EmergencyService";
 import { ConversationEngine } from "../services/ConversationEngine";
 import { InfermedicaService } from "../services/InfermedicaService";
-import { ClaudeService } from "../services/ClaudeService";
+import { GeminiService } from "../services/GeminiService";
 import { ResponseFormatter } from "../services/ResponseFormatter";
 
 export class SendMessageUseCase {
@@ -15,7 +15,7 @@ export class SendMessageUseCase {
 
     private infermedicaService = new InfermedicaService();
 
-    private claudeService = new ClaudeService();
+    private geminiService = new GeminiService();
 
     private formatter = new ResponseFormatter();
 
@@ -59,16 +59,24 @@ const conversation = this.conversationEngine.processMessage(
 const diagnosis = await this.infermedicaService.analyze(payload.message);
 
 // STEP 6 - Generate AI response
-const aiReply = await this.claudeService.chat(
-  `User Symptoms:
+const aiReply = await this.geminiService.chat(`
+User Symptoms:
 ${payload.message}
 
+Detected Symptoms:
+${diagnosis.symptoms.join(", ") || "None"}
+
 Possible Conditions:
-${diagnosis.possibleConditions.join(", ")}
+${diagnosis.possibleConditions.join(", ") || "Unknown"}
 
 Follow-up Question:
-${diagnosis.followUpQuestion ?? "None"}`
-);
+${diagnosis.followUpQuestion ?? "None"}
+
+Triage Level:
+${diagnosis.triageLevel}
+
+Respond naturally as CareGuru+, explaining the possible conditions, asking the follow-up question if needed, and always remind the user that this is not a substitute for professional medical advice.
+`);
 
 // STEP 7 - Format response
 const response = this.formatter.format(
