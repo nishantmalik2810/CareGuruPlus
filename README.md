@@ -1,79 +1,100 @@
-# 🩺 CareGuru+ – AI Powered Healthcare Assistant
+<h1 align="center">🩺 CareGuru+</h1>
+
+<h3 align="center">
+AI Powered Healthcare Assistant
+</h3>
+
+<p align="center">
+
+An AI-powered healthcare assistant built using <b>React</b>, <b>Express</b>,
+<b>PostgreSQL</b>, <b>Prisma ORM</b>, and
+<b>Google Gemini AI</b>.
+
+It intelligently assesses symptoms, detects emergencies,
+provides AI-generated medical guidance,
+and recommends the next course of action.
+
+</p>
+
+---
 
 <p align="center">
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
+
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?style=for-the-badge&logo=typescript)
-![NodeJS](https://img.shields.io/badge/Node.js-Express-green?style=for-the-badge&logo=node.js)
+
+![Express](https://img.shields.io/badge/Express.js-Backend-black?style=for-the-badge&logo=express)
+
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql)
+
 ![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue?style=for-the-badge&logo=postgresql)
+
+![Google Gemini](https://img.shields.io/badge/AI-Google%20Gemini-4285F4?style=for-the-badge&logo=google)
+
 ![Render](https://img.shields.io/badge/Backend-Render-46E3B7?style=for-the-badge)
+
 ![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?style=for-the-badge&logo=vercel)
 
 </p>
 
 ---
 
-## 🌍 Live Demo
+# 🌍 Live Demo
 
-### Frontend
-
-https://care-guru-plus.vercel.app
-
-### Backend API
-
-https://careguruplus-api.onrender.com
-
-### Health Endpoint
-
-https://careguruplus-api.onrender.com/health
-
-### GitHub Repository
-
-https://github.com/nishantmalik2810/CareGuruPlus
+| Service | Link |
+|---------|------|
+| 🌐 Frontend | https://care-guru-plus.vercel.app |
+| ⚙ Backend API | https://careguruplus-api.onrender.com |
+| ❤️ Health Check | https://careguruplus-api.onrender.com/health |
+| 📂 GitHub Repository | https://github.com/nishantmalik2810/CareGuruPlus |
 
 ---
 
-# 📖 Overview
+# 📖 About The Project
 
-CareGuru+ is an AI-powered healthcare assistant designed to provide an interactive symptom assessment experience. Users can describe their symptoms in natural language, receive AI-generated health guidance, view possible conditions, and get recommendations based on their inputs.
+CareGuru+ is an AI-powered healthcare assistant that helps users perform an initial symptom assessment through natural language conversations.
 
-The application follows a modern full-stack architecture using React, Express, Prisma ORM, PostgreSQL, and cloud deployment with Vercel and Render.
+Instead of using predefined forms, users can simply describe their symptoms in plain English. The system analyzes the symptoms, detects possible emergency situations, provides AI-generated guidance using **Google Gemini AI**, and recommends the most appropriate next step.
 
-> **Disclaimer:** This application is for educational purposes only and is **not a substitute for professional medical advice.**
+The project demonstrates the integration of modern full-stack development with Generative AI, REST APIs, PostgreSQL, Prisma ORM, and cloud deployment.
+
+> **Disclaimer**
+>
+> This application is developed for educational purposes only and is **NOT** a substitute for professional medical advice, diagnosis, or treatment.
 
 ---
 
 # ✨ Features
 
-- 🤖 AI-powered health assistant
-- 💬 Interactive symptom assessment
-- 🧠 Context-aware conversation flow
-- 🚨 Emergency symptom detection
-- 🩺 Possible condition suggestions
-- 📋 Follow-up questions
-- 📅 Book Appointment action
-- 🧪 Order Lab Test action
-- 💊 Buy Medicine action
-- 👨‍⚕️ Talk to a Real Doctor option
-- ⚡ REST API backend
-- 🗄 PostgreSQL database
+- 🤖 Google Gemini AI Integration
+- 💬 Natural Language Symptom Assessment
+- 🚨 Emergency Symptom Detection
+- 🩺 Possible Condition Suggestions
+- 📋 Follow-up Question Generation
+- 📊 Triage Recommendation
+- 📅 Book Appointment
+- 💊 Buy Medicine
+- 🧪 Order Lab Test
+- 👨‍⚕️ Talk to a Real Doctor
+- 🌐 REST API Architecture
+- ⚡ Fast React Frontend
+- 🗄 PostgreSQL Database
 - 🔥 Prisma ORM
-- 🌐 Cloud deployment
-- 📱 Responsive UI
-- 🛡 Secure backend architecture
+- 📱 Responsive Design
+- ☁️ Fully Deployed on Vercel & Render
 
 ---
 
 # 📸 Application Screenshots
 
-## 🏠 Home Screen
+## 🏠 Home Page
 
 ![Home](screenshots/home.png)
 
 ---
 
-## 🤖 AI Assessment
+## 🤖 AI Chat
 
 ![Chat](screenshots/chat.png)
 
@@ -84,361 +105,445 @@ The application follows a modern full-stack architecture using React, Express, P
 ![Health](screenshots/health.png)
 
 ---
-
 # 🏗 System Architecture
 
-```
-             React + TypeScript
-                     │
-                     ▼
-              Axios REST Calls
-                     │
-                     ▼
-          Express.js Backend API
-                     │
-     ┌───────────────┼──────────────┐
-     ▼               ▼              ▼
-Conversation     Emergency      AI Response
- Engine          Detection      Formatter
-                     │
-                     ▼
-                Prisma ORM
-                     │
-                     ▼
-               PostgreSQL DB
-                     │
-                     ▼
-                 Render Cloud
+```text
+                         User
+                           │
+                           ▼
+                  React + TypeScript
+                           │
+                      Axios REST API
+                           │
+                           ▼
+                  Express.js Backend
+                           │
+        ┌──────────────────┼──────────────────┐
+        ▼                  ▼                  ▼
+ Emergency Service   Conversation Engine   Symptom Analysis
+                                               │
+                                               ▼
+                                  Google Gemini 2.5 Flash
+                                               │
+                                               ▼
+                                     Response Formatter
+                                               │
+                                               ▼
+                                        Prisma ORM
+                                               │
+                                               ▼
+                                      PostgreSQL Database
+                                               │
+                                               ▼
+                                         Render Deployment
 ```
 
 ---
 
-# 🛠 Tech Stack
+# ⚙️ Tech Stack
 
-## Frontend
-
-- React 19
-- TypeScript
-- Vite
-- Axios
-- Framer Motion
-- Lucide React
-
-## Backend
-
-- Node.js
-- Express.js
-- TypeScript
-- Prisma ORM
-- PostgreSQL
-
-## Deployment
-
-- Vercel
-- Render
+| Category | Technologies |
+|----------|--------------|
+| Frontend | React 19, TypeScript, Vite, Axios, Framer Motion |
+| Backend | Node.js, Express.js, TypeScript |
+| AI | Google Gemini 2.5 Flash |
+| Database | PostgreSQL |
+| ORM | Prisma ORM |
+| Deployment | Vercel, Render |
+| Version Control | Git & GitHub |
 
 ---
 
 # 📂 Project Structure
 
-```
-CareGuruPlus
+```text
+CareGuruPlus/
 │
-├── frontend
-│   ├── src
-│   ├── public
-│   └── package.json
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.ts
 │
-├── prisma
+├── prisma/
+│   ├── migrations/
+│   └── schema.prisma
 │
-├── src
-│   ├── config
-│   ├── database
-│   ├── modules
-│   ├── shared
+├── screenshots/
+│
+├── src/
+│   ├── config/
+│   ├── database/
+│   ├── modules/
+│   │    └── chat/
+│   ├── shared/
 │   └── server.ts
 │
-├── screenshots
-│
+├── .env
+├── package.json
+├── tsconfig.json
 └── README.md
 ```
-# 🩺 CareGuru+ – AI Powered Healthcare Assistant
-
-<p align="center">
-
-![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?style=for-the-badge&logo=typescript)
-![NodeJS](https://img.shields.io/badge/Node.js-Express-green?style=for-the-badge&logo=node.js)
-![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue?style=for-the-badge&logo=postgresql)
-![Render](https://img.shields.io/badge/Backend-Render-46E3B7?style=for-the-badge)
-![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?style=for-the-badge&logo=vercel)
-
-</p>
 
 ---
 
-## 🌍 Live Demo
+# 🔄 Application Workflow
 
-### Frontend
+```text
+User enters symptoms
+          │
+          ▼
+React Frontend
+          │
+          ▼
+Express Backend
+          │
+          ▼
+Emergency Detection
+          │
+          ▼
+Symptom Analysis
+          │
+          ▼
+Google Gemini AI
+          │
+          ▼
+AI Response Formatter
+          │
+          ▼
+JSON Response
+          │
+          ▼
+Frontend Displays Recommendation
+```
 
+---
+
+# 🚀 Key Functionalities
+
+- AI-powered medical conversations
+- Symptom assessment
+- Emergency detection
+- Triage recommendation
+- Suggested possible conditions
+- Follow-up medical questions
+- Appointment action
+- Lab test recommendation
+- Medicine recommendation
+- Professional medical disclaimer
+- REST API communication
+- Responsive interface
+- Cloud deployment
+
+# 🚀 Installation
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/nishantmalik2810/CareGuruPlus.git
+
+cd CareGuruPlus
+```
+
+---
+
+## Install Backend Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Install Frontend Dependencies
+
+```bash
+cd frontend
+
+npm install
+```
+
+---
+
+## Configure Environment Variables
+
+Create a `.env` file in the project root.
+
+```env
+PORT=5000
+
+NODE_ENV=development
+
+DATABASE_URL=YOUR_POSTGRES_DATABASE_URL
+
+JWT_SECRET=YOUR_SECRET_KEY
+
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+
+FRONTEND_URL=http://localhost:3000
+```
+
+---
+
+## Run Backend
+
+```bash
+npm run dev
+```
+
+---
+
+## Run Frontend
+
+```bash
+cd frontend
+
+npm run dev
+```
+
+---
+
+# 📡 API Endpoints
+
+## Health Check
+
+```http
+GET /health
+```
+
+Returns server status.
+
+---
+
+## AI Chat
+
+```http
+POST /chat
+```
+
+### Request
+
+```json
+{
+  "sessionId": "123",
+  "message": "I have fever and headache for 2 days"
+}
+```
+
+---
+
+### Response
+
+```json
+{
+  "success": true,
+  "reply": "AI generated response...",
+  "assessment": {
+    "symptoms": [
+      "fever",
+      "headache"
+    ],
+    "possibleConditions": [
+      "Viral Fever"
+    ],
+    "recommendation": "doctor",
+    "followUpQuestion": "How many days have you had these symptoms?"
+  },
+  "triageLevel": "doctor",
+  "actions": [
+    "Book Appointment",
+    "Order Lab Test",
+    "Buy Medicine",
+    "Talk to a real doctor"
+  ]
+}
+```
+
+---
+
+# ☁️ Deployment
+
+## Frontend
+
+Hosted on **Vercel**
+
+```
 https://care-guru-plus.vercel.app
-
-### Backend API
-
-https://careguruplus-api.onrender.com
-
-### Health Endpoint
-
-https://careguruplus-api.onrender.com/health
-
-### GitHub Repository
-
-https://github.com/nishantmalik2810/CareGuruPlus
-
----
-
-# 📖 Overview
-
-CareGuru+ is an AI-powered healthcare assistant designed to provide an interactive symptom assessment experience. Users can describe their symptoms in natural language, receive AI-generated health guidance, view possible conditions, and get recommendations based on their inputs.
-
-The application follows a modern full-stack architecture using React, Express, Prisma ORM, PostgreSQL, and cloud deployment with Vercel and Render.
-
-> **Disclaimer:** This application is for educational purposes only and is **not a substitute for professional medical advice.**
-
----
-
-# ✨ Features
-
-- 🤖 AI-powered health assistant
-- 💬 Interactive symptom assessment
-- 🧠 Context-aware conversation flow
-- 🚨 Emergency symptom detection
-- 🩺 Possible condition suggestions
-- 📋 Follow-up questions
-- 📅 Book Appointment action
-- 🧪 Order Lab Test action
-- 💊 Buy Medicine action
-- 👨‍⚕️ Talk to a Real Doctor option
-- ⚡ REST API backend
-- 🗄 PostgreSQL database
-- 🔥 Prisma ORM
-- 🌐 Cloud deployment
-- 📱 Responsive UI
-- 🛡 Secure backend architecture
-
----
-
-# 📸 Application Screenshots
-
-## 🏠 Home Screen
-
-![Home](screenshots/home.png)
-
----
-
-## 🤖 AI Assessment
-
-![Chat](screenshots/chat.png)
-
----
-
-## ❤️ Backend Health Check
-
-![Health](screenshots/health.png)
-
----
-
-# 🏗 System Architecture
-
-```
-             React + TypeScript
-                     │
-                     ▼
-              Axios REST Calls
-                     │
-                     ▼
-          Express.js Backend API
-                     │
-     ┌───────────────┼──────────────┐
-     ▼               ▼              ▼
-Conversation     Emergency      AI Response
- Engine          Detection      Formatter
-                     │
-                     ▼
-                Prisma ORM
-                     │
-                     ▼
-               PostgreSQL DB
-                     │
-                     ▼
-                 Render Cloud
 ```
 
 ---
-
-# 🛠 Tech Stack
-
-## Frontend
-
-- React 19
-- TypeScript
-- Vite
-- Axios
-- Framer Motion
-- Lucide React
 
 ## Backend
 
-- Node.js
-- Express.js
-- TypeScript
-- Prisma ORM
-- PostgreSQL
-
-## Deployment
-
-- Vercel
-- Render
-
----
-
-# 📂 Project Structure
+Hosted on **Render**
 
 ```
-CareGuruPlus
-│
-├── frontend
-│   ├── src
-│   ├── public
-│   └── package.json
-│
-├── prisma
-│
-├── src
-│   ├── config
-│   ├── database
-│   ├── modules
-│   ├── shared
-│   └── server.ts
-│
-├── screenshots
-│
-└── README.md
+https://careguruplus-api.onrender.com
 ```
----
-
-# 🤝 Contributing
-
-Contributions are always welcome!
-
-If you'd like to improve CareGuru+, feel free to:
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Open a Pull Request
 
 ---
 
-# 📌 Future Enhancements
+## Database
 
-The following features are planned for future releases:
-
-- 🔐 JWT Authentication
-- 👤 User Profiles
-- 💬 Persistent Chat History
-- 🤖 Claude / OpenAI Integration
-- 🩺 Infermedica Integration
-- 👨‍⚕️ Doctor Dashboard
-- 🧑‍💼 Admin Dashboard
-- 📅 Appointment Booking
-- 💊 Medicine Recommendation
-- 🧪 Lab Test Booking
-- 📄 PDF Medical Reports
-- 🔔 Email Notifications
-- 🎤 Voice Assistant
-- 📱 Progressive Web App (PWA)
-- 🌍 Google Maps Integration
+Hosted on **Render PostgreSQL**
 
 ---
 
 # 🧪 Testing
 
-Backend
+Build the backend
 
 ```bash
 npm run build
 ```
 
-Run development server
+Start development server
 
 ```bash
 npm run dev
 ```
 
-Frontend
+Run frontend
 
 ```bash
 cd frontend
+
 npm run dev
 ```
+
+---
+
+# 🔒 Security
+
+- Environment variables stored securely
+- API keys excluded from Git using `.gitignore`
+- Emergency symptoms handled before AI processing
+- Medical disclaimer included in every AI response
+
+# 🛣 Roadmap
+
+The following features are planned for future releases:
+
+- [x] AI-powered symptom assessment
+- [x] Google Gemini AI integration
+- [x] Emergency symptom detection
+- [x] PostgreSQL integration
+- [x] Cloud deployment (Vercel & Render)
+- [ ] Conversation Memory
+- [ ] Persistent Chat History
+- [ ] JWT Authentication
+- [ ] User Profiles
+- [ ] Doctor Dashboard
+- [ ] Admin Dashboard
+- [ ] Appointment Booking
+- [ ] Lab Test Booking
+- [ ] Medicine Recommendation
+- [ ] Voice Assistant
+- [ ] Email Notifications
+- [ ] Progressive Web App (PWA)
+
+---
+
+# 🚀 Future Scope
+
+CareGuru+ is designed as a scalable healthcare platform. Future versions aim to include:
+
+- Multi-turn AI conversations with memory
+- Real-time symptom analysis using medical APIs
+- Electronic Health Record (EHR) support
+- Doctor appointment scheduling
+- Secure patient authentication
+- Medical report generation (PDF)
+- Voice-enabled AI assistant
+- Mobile application (Android & iOS)
+- AI-assisted health analytics dashboard
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+If you would like to contribute:
+
+1. Fork the repository
+2. Create a feature branch
+
+```bash
+git checkout -b feature/your-feature
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Add new feature"
+```
+
+4. Push your branch
+
+```bash
+git push origin feature/your-feature
+```
+
+5. Open a Pull Request
 
 ---
 
 # 📄 License
 
-This project is developed for educational and portfolio purposes.
+This project is intended for educational and portfolio purposes.
 
 ---
 
 # 👨‍💻 Author
 
-**Nishant Malik**
+## Nishant Malik
 
-GitHub
-
-https://github.com/nishantmalik2810
-
-Project Repository
-
-https://github.com/nishantmalik2810/CareGuruPlus
+- GitHub: https://github.com/nishantmalik2810
+- Project: https://github.com/nishantmalik2810/CareGuruPlus
 
 ---
 
 # 🙏 Acknowledgements
 
-This project makes use of the following technologies:
+This project was built using the following technologies and services:
 
 - React
 - TypeScript
+- Node.js
 - Express.js
-- Prisma ORM
 - PostgreSQL
+- Prisma ORM
+- Google Gemini AI
 - Vercel
 - Render
 - Axios
 - Framer Motion
 - Lucide React
 
-Special thanks to the open-source community for the amazing tools and libraries used in this project.
+Special thanks to the open-source community for providing the amazing tools and libraries that made this project possible.
 
 ---
 
 # ⭐ Support
 
-If you found this project useful:
+If you found this project helpful, consider supporting it by:
 
-⭐ Star this repository
-
-🍴 Fork the repository
-
-🛠 Contribute improvements
+- ⭐ Starring the repository
+- 🍴 Forking the repository
+- 🛠 Contributing improvements
+- 📢 Sharing it with others
 
 ---
 
 <p align="center">
 
-Made with ❤️ by Nishant Malik
+### 🩺 CareGuru+
+
+**Built with ❤️ by Nishant Malik**
+
+AI Powered Healthcare Assistant
+
+⭐ If you like this project, don't forget to star the repository!
 
 </p>
