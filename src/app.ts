@@ -63,5 +63,11 @@ app.get("/", (req: Request, res: Response) => {
     timestamp: new Date().toISOString()
   });
 });
-
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    message: "CareGuru+ API is running",
+    timestamp: new Date().toISOString(),
+  });
+});
 export default app;
